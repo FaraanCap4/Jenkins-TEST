@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Chech Java Version') {
             steps {
-                java --version
+                sh 'java --version'
             }
         }
         stage('logs') {
