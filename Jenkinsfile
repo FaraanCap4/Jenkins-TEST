@@ -4,12 +4,7 @@ pipeline {
     stages {
         stage('logs') {
             steps {
-                sh echo "HELLO FROM JENKINSFILE"
-            }
-        }
-        stage('build') {
-            steps {
-                sh 'mvn --version'
+                echo "HELLO FROM JENKINSFILE"
             }
         }
     }
