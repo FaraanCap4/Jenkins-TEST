@@ -10,10 +10,16 @@ pipeline {
                 sh 'mvn --version'
             }
         }
-        stage('Test Project') {
+        stage('Test project') {
             steps {
                 echo 'Testing project using mvn -nsu clean test'
                 sh 'mvn -nsu clean test'
+            }
+        }
+        stage("Build project") {
+            steps{
+                echo 'Building project using mvn -nsu -DskipMunitTests clean package'
+                sh 'mvn -nsu -DskipMunitTests clean package'
             }
         }
     }
