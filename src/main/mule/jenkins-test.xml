@@ -2,4 +2,8 @@
 
 <mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd"></mule>
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	<flow name="jenkins-testFlow" doc:id="0211ba89-0001-4061-9c55-d57bc92bc626" >
+		<logger level="INFO" doc:name="Logger" doc:id="54c63e65-de73-4499-ae0f-f4c90a4a3a84" />
+	</flow>
+</mule>

@@ -10,5 +10,11 @@ pipeline {
                 sh 'mvn --version'
             }
         }
+        stage('Test Project') {
+            steps {
+                echo 'Testing project using mvn -nsu clean test'
+                sh 'mvn -nsu clean test'
+            }
+        }
     }
 }

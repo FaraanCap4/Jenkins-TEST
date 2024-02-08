@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="jenkins-test-test-suite.xml" />
+	<munit:test name="jenkins-test-test-suite-jenkins-testFlowTest" doc:id="7de64fb0-e36d-41ab-bb08-c33f54ca62d0" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to jenkins-testFlow" doc:id="9fb680aa-53d9-4bdd-a6d2-d32d1997982b" name="jenkins-testFlow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-equals doc:name="Assert equals" doc:id="e728bdac-dbf6-4d93-874c-feaa9dfaae91" actual="#[true]" expected="#[true]"/>
+		</munit:validation>
+	</munit:test>
+
+
+</mule>
