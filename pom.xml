@@ -41,9 +41,6 @@
 						<targetType>server</targetType>
 						<server>my.anypoint.credentials</server>
 						<environment>Sandbox</environment>
-						<properties>
-							<key>value</key>
-						</properties>
 					</armDeployment>
 				</configuration>
 			</plugin>
