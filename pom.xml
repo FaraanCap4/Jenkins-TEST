@@ -13,9 +13,10 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<app.runtime>4.5.3</app.runtime>
+		<app.runtime>4.5.2</app.runtime>
 		<mule.maven.plugin.version>4.0.0</mule.maven.plugin.version>
 		<munit.version>3.0.0</munit.version>
+		<muleHome>/home/faraan/mule-enterprise-standalone-4.5.2/</muleHome>
 	</properties>
 
 	<build>
@@ -30,6 +31,12 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
+				<configuration>
+				    <standaloneDeployment>
+				    	<muleHome>${muleHome}</muleHome>
+				    	<muleVersion>${app.runtime}</muleVersion>
+					</standaloneDeployment>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>com.mulesoft.munit.tools</groupId>

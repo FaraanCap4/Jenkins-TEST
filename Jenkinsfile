@@ -24,8 +24,8 @@ pipeline {
         }
         stage('Deploy on premises') {
             steps{
-                echo 'Moving packaged application to apps directory'
-                sh 'cp "/home/faraan/.jenkins/jobs/MyPipeline/branches/main/workspace/target/jenkins-test-1.0.0-SNAPSHOT-mule-application.jar" /home/faraan/mule-enterprise-standalone-4.5.2/apps/jenkins-test.jar'
+                echo 'Deploying on premises using mvn clean deploy -DmuleDeploy -DskipMunitTests'
+                sh 'mvn clean deploy -DmuleDeploy -DskipMunitTests'
             }
         }
     }
