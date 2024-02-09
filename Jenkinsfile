@@ -22,5 +22,11 @@ pipeline {
                 build 'main'
             }
         }
+        stage('Build main') {
+            steps {
+                echo 'Trigerring build on main branch'
+                build 'main'
+            }
+        }
     }
 }
