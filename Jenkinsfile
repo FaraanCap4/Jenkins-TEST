@@ -10,10 +10,16 @@ pipeline {
                 sh 'mvn --version'
             }
         }
-        stage('Deploy on premises') {
-            steps{
-                echo 'Deploying on premises using mvn clean deploy -DmuleDeploy -DskipMunitTests'
-                sh 'mvn clean deploy -DmuleDeploy -DskipMunitTests'
+        stage('Test project') {
+            steps {
+                echo 'Testing project using mvn -nsu clean test'
+                sh 'mvn -nsu -Dhttp.port=8888 clean test'
+            }
+        }
+        stage('Build main') {
+            steps {
+                echo 'Trigerring build on main branch'
+                build 'main'
             }
         }
         stage('Build main') {
