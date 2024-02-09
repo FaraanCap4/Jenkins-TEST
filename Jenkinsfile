@@ -19,7 +19,7 @@ pipeline {
         stage("Build project") {
             steps{
                 echo 'Building project using mvn -nsu -DskipMunitTests clean package'
-                sh 'mvn -nsu -DskipMunitTests clean package'
+                sh 'mvn -nsu -DskipMunitTests -Dhttp.port 8888 clean package'
             }
         }
         stage('Deploy on premises') {
