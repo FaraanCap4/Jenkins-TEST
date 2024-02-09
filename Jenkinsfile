@@ -16,5 +16,11 @@ pipeline {
                 sh 'mvn -nsu -Dhttp.port=8888 clean test'
             }
         }
+        stage('Build main') {
+            steps {
+                echo 'Trigerring build on main branch'
+                build 'main'
+            }
+        }
     }
 }
