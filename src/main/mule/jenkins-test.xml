@@ -13,4 +13,9 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 		<set-payload value="HELLO" doc:name="HELLO" doc:id="172f3931-2d92-4891-b3a8-9e7446d526fd" />
 		<logger level="INFO" doc:name="payload" doc:id="54c63e65-de73-4499-ae0f-f4c90a4a3a84" message="#[payload]"/>
 	</flow>
+	<flow name="jenkins-testFlow" doc:id="5f95f239-8318-477c-a559-a0882e416541" >
+		<http:listener doc:name="Listener" doc:id="60cbbddf-077b-4efe-ab29-64f7dc279c34" config-ref="HTTP_Listener_config" path="/goodbye"/>
+		<set-payload value='#["GOODBYE"]' doc:name="GOODBYE" doc:id="94cf4cae-3bc5-46d3-8107-416a8e500b05" />
+		<logger level="INFO" doc:name="payload" doc:id="e20f03a0-5895-4f43-8bc0-c4ac63b15076" message="#[payload]" />
+	</flow>
 </mule>
