@@ -13,13 +13,13 @@ pipeline {
         stage('Test project') {
             steps {
                 echo 'Testing project using mvn -nsu clean test'
-                sh 'mvn -nsu clean test'
+                sh 'mvn -nsu -Dhttp.port=8888 clean test'
             }
         }
         stage("Build project") {
             steps{
                 echo 'Building project using mvn -nsu -DskipMunitTests clean package'
-                sh 'mvn -nsu -DskipMunitTests -Dhttp.port 8888 clean package'
+                sh 'mvn -nsu -DskipMunitTests clean package'
             }
         }
         stage('Deploy on premises') {
