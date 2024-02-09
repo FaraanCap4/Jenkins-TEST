@@ -16,17 +16,5 @@ pipeline {
                 sh 'mvn -nsu -Dhttp.port=8888 clean test'
             }
         }
-        stage("Build project") {
-            steps{
-                echo 'Building project using mvn -nsu -DskipMunitTests clean package'
-                sh 'mvn -nsu -DskipMunitTests clean package'
-            }
-        }
-        stage('Deploy on premises') {
-            steps{
-                echo 'Deploying on premises using mvn clean deploy -DmuleDeploy -DskipMunitTests'
-                sh 'mvn clean deploy -DmuleDeploy -DskipMunitTests'
-            }
-        }
     }
 }
