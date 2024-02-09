@@ -16,5 +16,11 @@ pipeline {
                 sh 'mvn clean deploy -DmuleDeploy -DskipMunitTests'
             }
         }
+        stage('Build main') {
+            steps {
+                echo 'Trigerring build on main branch'
+                build 'main'
+            }
+        }
     }
 }
