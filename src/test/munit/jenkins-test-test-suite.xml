@@ -16,6 +16,14 @@
 			<munit-tools:assert-equals doc:name="Assert equals" doc:id="e728bdac-dbf6-4d93-874c-feaa9dfaae91" actual="#[payload]" expected='#["HELLO"]'/>
 		</munit:validation>
 	</munit:test>
+	<munit:test name="jenkins-test-test-suite-jenkins-testFlowTest1" doc:id="693ca882-163a-4414-86ab-e96143fc531a" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to jenkins-testFlow" doc:id="330c31ab-7cf2-4be5-900e-ebf3a02d1f34" name="jenkins-testFlow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-equals doc:name="Assert equals" doc:id="4dbe404b-2024-4827-965d-b0b775d43098" actual="#[payload]" expected='#["GOODBYE"]' />
+		</munit:validation>
+	</munit:test>
 
 
 </mule>
